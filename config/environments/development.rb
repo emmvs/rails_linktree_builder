@@ -67,4 +67,16 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # Devise
+  # Depending on your application's configuration some manual setup may be required:
+
+  # 1. Ensure you have defined default url options in your environments files. Here
+  #    is an example of default_url_options appropriate for a development environment
+  #    in config/environments/development.rb:
+
+  ##    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #    In production, :host should be set to the actual host of your application.
+  #    * Required for all applications. *
 end
