@@ -1,2 +1,6 @@
 <h1>Dashboard#admin</h1>
 <p>Find me in app/views/dashboard/admin.html.erb</p>
+
+<% if current_user %>
+<h2>Hi, <%= current_user.email %>! You are logged in! 🫧</h2>
+<% end  %>
