@@ -1,4 +1,5 @@
+# app/controllers/dashboard_controller.rb
 class DashboardController < ApplicationController
-  def admin
-  end
+  before_action :authenticate_user!
+  def admin; end
 end
