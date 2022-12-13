@@ -1,10 +1,14 @@
-<div class="container">
-  <h1>Welcome to your Linktree Dashboard 🐝</h1>
-  <p>You can edit your Linktree here!</p>
+<div class="body">
+  <div class="container background-container">
+    <h1>Welcome to your Linktree Dashboard 🐝</h1>
+    <p>You can edit your Linktree here!</p>
 
-  <% if current_user %>
-  <h2>Hi, <%= current_user.email %>! You are logged in! 🫧</h2>
-  <%= button_to "log out", destroy_user_session_path, method: :delete %>
-  <% else  %>
-  <% end  %>
+    <% if current_user %>
+    <h2>Hi, <%= current_user.email %>! You are logged in! 🫧</h2>
+    <%= button_to "log out", destroy_user_session_path, method: :delete %>
+    <% else  %>
+    <% end  %>
+  </div>
 </div>
+
+
