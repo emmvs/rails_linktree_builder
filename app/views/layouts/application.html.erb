@@ -14,6 +14,7 @@
 
   <body>
     <%= render partial: 'layouts/navbar' if @should_render_navbar %>
+    <%# Alerts need to be below bc they take up space  %>
     <%= render partial: 'layouts/alerts'  %>
     <%= yield %>
 
