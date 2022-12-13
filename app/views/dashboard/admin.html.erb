@@ -1,8 +1,10 @@
-<h1>Dashboard#admin</h1>
-<p>Find me in app/views/dashboard/admin.html.erb</p>
+<div class="container">
+  <h1>Dashboard#admin</h1>
+  <p>Find me in app/views/dashboard/admin.html.erb</p>
 
-<% if current_user %>
-<h2>Hi, <%= current_user.email %>! You are logged in! 🫧</h2>
-<%= button_to "log out", destroy_user_session_path, method: :delete %>
-<% else  %>
-<% end  %>
+  <% if current_user %>
+  <h2>Hi, <%= current_user.email %>! You are logged in! 🫧</h2>
+  <%= button_to "log out", destroy_user_session_path, method: :delete %>
+  <% else  %>
+  <% end  %>
+</div>
