@@ -8,7 +8,7 @@ class TurboFailureApp < Devise::FailureApp
     if request_format == :turbo_streams
       redirect
     else
-      suoer
+      super
     end
   end
 

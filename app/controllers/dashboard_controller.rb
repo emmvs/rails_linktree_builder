@@ -4,4 +4,6 @@ class DashboardController < ApplicationController
   def admin
     @should_render_navbar = true
   end
+
+
 end
