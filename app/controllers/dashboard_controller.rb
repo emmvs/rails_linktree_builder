@@ -5,5 +5,13 @@ class DashboardController < ApplicationController
     @should_render_navbar = true
   end
 
+  def show
 
+  end
+
+  private
+
+  def set_user
+
+  end
 end
