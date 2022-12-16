@@ -1,6 +1,8 @@
 # app/controllers/dashboard_controller.rb
 class DashboardController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: 
+  before_action :set_user, only: [:show]
+
   def admin
     @should_render_navbar = true
   end
@@ -12,7 +14,7 @@ class DashboardController < ApplicationController
   private
 
   def set_user
-    # localhost:3000
+    # Using find_by_id instead of find in case of text input
     @user = User.find_by_id(params[:id])
   end
 end
