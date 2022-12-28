@@ -14,7 +14,7 @@ class DashboardController < ApplicationController
   private
 
   def set_user
-    # Using find_by_id instead of // find in case of text input
+    # Using #find_by_id instead of #find in case of text input
     @user = User.find_by_id(params[:id])
   end
 end
