@@ -1,6 +1,6 @@
 # app/controllers/dashboard_controller.rb
 class DashboardController < ApplicationController
-  before_action :authenticate_user!, except:
+  before_action :authenticate_user!, except: [:show]
   before_action :set_user, only: [:show]
 
   def admin
@@ -15,6 +15,7 @@ class DashboardController < ApplicationController
 
   def set_user
     # Using #find_by_id instead of #find in case of text input
+    # @user = User.find(params[:id])
     @user = User.find_by_id(params[:id])
   end
 end
