@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Log in</h2>
-
+  <%# Fix for Turbo so dropdown works data: {turbo: false} %>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false} ) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log In", class:"btn"%>
+      <%= f.button :submit, "Log In", class:"btn" %>
     </div>
   <% end %>
 
