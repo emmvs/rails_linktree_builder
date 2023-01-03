@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   get 'dashboard', to: 'dashboard#admin'
+  get 'appearance', to: 'dashboard#appearance'
   root 'dashboard#admin'
 
   # Gets the id as a parameter to our dashboard_controller within the admin action
