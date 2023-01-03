@@ -1,1 +1,10 @@
 <%# app/views/dashboard/appearance.html.erb %>
+<div class="container">
+  <h1>Edit your page's appearance! 🪄</h1>
+  <%= simple_form_for(current_user,
+    url: registration_path(current_user),
+    html: {method: :put},
+    data: {turbo: false}) do |f|  %>
+
+  <% end %>
+</div>
