@@ -38,7 +38,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+
+  # https://stackoverflow.com/questions/5113248/devise-update-user-without-password
+  def update_resource(resource, params)
+    # Require current password if user is trying to change password
+    return super if params['password']&.present?
+
+    # Allows user to update registration information without password
+    resource.update_without_password(params.except('current_password'))
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
