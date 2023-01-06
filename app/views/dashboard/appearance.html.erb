@@ -1,10 +1,25 @@
 <%# app/views/dashboard/appearance.html.erb %>
 <div class="container">
-  <h1>Edit your page's appearance! 🪄</h1>
+  <h1 style="text-align:center;">Edit your page's appearance!</h1>
   <%= simple_form_for(current_user,
     url: registration_path(current_user),
     html: {method: :put},
     data: {turbo: false}) do |f|  %>
+    <div class="row">
+      <div class="col-six link-list">
+        <div class="row">
+          <div class="col-4">
+            <%= image_tag(current_user.avatar, class:"avatar-image" if current_user.avatar.attached?)  %>
+          </div>
+          <div class="col-4">
+          </div>
+          <div class="col-4">
+          </div>
+        </div>
+      </div>
+      <div class="col-six link-preview">
+      </div>
+    </div>
 
   <% end %>
 </div>
