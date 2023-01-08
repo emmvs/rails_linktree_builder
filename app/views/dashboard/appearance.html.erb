@@ -1,6 +1,7 @@
 <%# app/views/dashboard/appearance.html.erb %>
 <div class="container">
   <h1 style="text-align:center;">Edit your page's appearance!</h1>
+  <%# This takes us to the registrations_controller which does the update_resource %>
   <%= simple_form_for(current_user,
     url: registration_path(current_user),
     html: {method: :put},
@@ -19,10 +20,8 @@
           </div>
         </div>
       </div>
-
       <div class="col-6 link-preview">
       </div>
     </div>
-
   <% end %>
 </div>
