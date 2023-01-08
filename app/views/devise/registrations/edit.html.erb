@@ -11,6 +11,15 @@
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
 
+    <div class="input-group mb-3">
+      <span class="input-group-text">@</span>
+      <%= f.input :username,
+                  placeholder: "Your username..",
+                  label: false,
+                  class:"form-control",
+                  required: true %>
+    </div>
+
       <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
                   required: false,
