@@ -14,7 +14,6 @@ class User < ApplicationRecord
     errors.add(:username, 'is already taken 🤷‍♀️') if User.exists?(username:)
 
     restricted_username_list = %(admin root dashboard analytics appearance settings preferances calendar)
-
     errors.add(:username, 'is restricted') if restricted_username_list.include?(username)
   end
 end
