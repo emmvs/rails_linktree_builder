@@ -50,7 +50,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # Takes us back to where we came from
-  def after_update_path_for(_recourse)
+  def after_update_path_for(_resource)
     request.referrer
   end
 
