@@ -13,6 +13,8 @@ class DashboardController < ApplicationController
 
   def show
     redirect_to dashboard_path if @user.nil?
+
+    @links = @user.links.where.not(url: '', title: '')
   end
 
   private

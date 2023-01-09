@@ -31,6 +31,6 @@ class User < ApplicationRecord
   private
 
   def create_default_links
-    Link.create(user: self, title: '', url: '') while links.count < 10
+    Link.create(user: self, title: '', url: '') while links.count < 5
   end
 end

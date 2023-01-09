@@ -5,17 +5,33 @@
     <div class="col-1"></div>
       <div class="col-10">
         <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-          <%= image_tag(@user.avatar, class:"avatar-image") if @user.avatar.attached?  %>
-        </div>
-        <div class="col-12 d-flex justify-content-center">
-          <h1><%= @user.full_name %></h1>
-        </div>
-        <div class="col-12 d-flex justify-content-center">
-          <h2><%= @user.body %></h2>
-        </div>
+          <div class="col-12 d-flex justify-content-center">
+            <%= image_tag(@user.avatar, class:"avatar-image") if @user.avatar.attached?  %>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <h1><%= @user.full_name %></h1>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <h2><%= @user.body %></h2>
         </div>
       </div>
     <div class="col-1"></div>
+
+      <div class="row">
+        <div class="col-1"></div>
+          <div class="col-10">
+          <% @links.each do |link|  %>
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                <%= link_to link.url, target:"_blank", class:"linkable btn btn-secondary" do %>
+                  <span class="linkable-span"><%= link.title  %></span>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          </div>
+        <div class="col-1"></div>
+      </div>
+    </div>
   </div>
 </div>
