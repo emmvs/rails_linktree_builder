@@ -102,6 +102,8 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.11.0)
     ffi (1.15.5)
+    friendly_id (5.5.0)
+      activerecord (>= 4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http-accept (1.7.0)
@@ -256,6 +258,7 @@ DEPENDENCIES
   cloudinary
   debug
   devise (~> 4.8)
+  friendly_id (~> 5.5)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder

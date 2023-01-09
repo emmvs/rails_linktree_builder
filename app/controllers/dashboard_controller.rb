@@ -20,8 +20,12 @@ class DashboardController < ApplicationController
 
   def set_user
     # Using #find_by_id instead of #find (= nil) in case of text input
-    # @user = User.find(params[:id])
     # localhost:3000/1
-    @user = User.find_by_id(params[:id])
+    # @user = User.find_by_id(params[:id])
+    begin
+      @user = User.friendly.find(params[:id])
+    rescue StandardError
+      @user = nil
+    end
   end
 end
