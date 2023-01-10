@@ -14,11 +14,23 @@
  *= require_self
  */
 
-  /* Linktree Admin */
+  /* Linktree Admin & general Styling */
+
+  h1, h2 {
+    color: rgb(255, 255, 255) !important;
+  }
+
+  h1 {
+    font-size: 1rem !important;
+  }
+
+  h2 {
+    font-size: 0.8rem !important;
+  }
 
  .avatar-image {
-  width: 10rem;
-  height: 10rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
  }
 
@@ -51,7 +63,7 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #2d4a45;
  }
 
