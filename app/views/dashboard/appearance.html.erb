@@ -1,6 +1,6 @@
 <%# app/views/dashboard/appearance.html.erb %>
 <div class="container">
-  <h1 style="text-align:center;">Edit your page's appearance!</h1>
+  <h1 style="text-align:left;">Edit your page's appearance!</h1>
   <%# This takes us to the registrations_controller which does the update_resource %>
   <%= simple_form_for(current_user,
     url: registration_path(current_user),
@@ -17,26 +17,26 @@
           </div>
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-5 ">
           <div class="col-6 no-padding-col">
           <%= f.input :full_name, placeholder: "Your full name...", label: false, class:"form-control", required: false %>
           </div>
           <div class="col-6 no-padding-col">
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 flex-nowrap">
               <span class="input-group-text">@</span>
               <%= f.input :username, placeholder: "Your username..", label: false, class:"form-control", required: true %>
             </div>
           </div>
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-5 d-flex justify-content-between">
           <div class="col no-padding-col">
           <%= f.input :body, placeholder: "About you..", label: false, class:"form-control", required: false %>
           </div>
         </div>
 
-        <div class="col-4 no-padding-col">
-          <%= f.submit "Update Account", class:"btn btn-primary"  %>
+        <div class="col-4 no-padding-col mt-5">
+          <%= f.submit "Update Account", class:"btn btn-dark"  %>
         </div>
       </div>
       <div class="col-6 link-preview">
