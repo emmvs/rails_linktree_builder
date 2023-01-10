@@ -4,7 +4,8 @@
   <div class="container-fluid">
 
       <a class="navbar-brand" href="#">
-        <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/ea/19/76/ea19763d-bcbb-ec8e-8059-6bd4ad6427a7/source/512x512bb.jpg" alt="HT" width="30" height="24" class="d-inline-block align-text-top">
+      <%= image_tag 'hivetracks_logo.png', width: "30", height: "40", class: "d-inline-block align-text-top" %>
+        <%# <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/da/04/c6/da04c669-e065-7d2e-f0ac-04bf92c54857/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x600wa.png" alt="HT" width="30" height="24" class="d-inline-block align-text-top"> %>
         <%= link_to "HiveTracks LinkTree", dashboard_path, class: "navbar-brand"  %>
       </a>
 
@@ -25,7 +26,7 @@
         <%# DROPDOWN %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            <%= current_user.username  %>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "My Account", edit_user_registration_path, class: "dropdown-item" %>
