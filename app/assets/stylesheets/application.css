@@ -16,6 +16,14 @@
 
   /* Linktree Admin & general Styling */
 
+  /* Find background linear gradient in application.html.erb */
+    /* .profile-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,026)) 37%;
+  } */
+
   h1, h2 {
     color: rgb(255, 255, 255) !important;
   }
