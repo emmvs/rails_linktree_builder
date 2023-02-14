@@ -33,8 +33,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # This is for ngrok to work
-  config.hosts << /[a-z0-9-.]+\.ngrok\.io/
+  # # This is for ngrok to work
+  # config.hosts << /[a-z0-9-.]+\.ngrok\.io/
 
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
