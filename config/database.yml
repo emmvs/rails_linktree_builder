@@ -40,26 +40,28 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: linktree_dev
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   port: 5432
-  username: hivetracks_admin
-  password: <%= ENV['DEV_DATABASE_PASSWORD'] %>
-  host: hivetracks-rds-postgres.co6rl1apthmk.us-east-1.rds.amazonaws.com
 
 development:
   <<: *default
   database: linktree_dev
-  reconnect: true
+  username: emmarunzel
+  host: localhost
 
 test:
   <<: *default
   database: linktree_test
+  username: emmarunzel
+  host: localhost
   # database: db/test.sqlite3
 
 production:
   <<: *default
   database: linktree_prod
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DEV_DATABASE_HOST'] %>
   # database: db/production.sqlite3
 
 # Warning: The database defined as "test" will be erased and
