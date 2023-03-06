@@ -36,9 +36,9 @@ Rails.application.configure do
   # # This is for ngrok to work
   # config.hosts << /[a-z0-9-.]+\.ngrok\.io/
 
-
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  # Changed from :local to :cloudinary
+  config.active_storage.service = :cloudinary
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
