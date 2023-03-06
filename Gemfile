@@ -82,5 +82,6 @@ end
 gem "devise", "~> 4.8"
 gem "simple_form", "~> 5.1"
 gem "cloudinary"
+gem "dotenv-rails", groups: [:development, :test]
 
 gem "friendly_id", "~> 5.5"
