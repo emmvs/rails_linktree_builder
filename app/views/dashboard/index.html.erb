@@ -8,11 +8,19 @@
 
           <div class="col-6 mt-2">
         <%# <div class="col-3"> %>
-            <% current_user.links.each do |link| %>
-              <%= simple_form_for(link, url: links_url(link)) do |f| %>
+            <% @links.each do |link| %>
+              <%= simple_form_for link do |f| %>
               <%= f.input :title, placeholder: "Title", label: false, class:"form-control" %>
               <%= f.input :url, placeholder: "URL", label: false, class:"form-control" %>
-              <%= f.submit "Update Link", class:"btn btn-dark me-auto mb-2" %>
+              <%= f.submit class:"btn btn-dark me-auto mb-2" %>
+              <% end  %>
+            <% end  %>
+
+            <% @empty_links.each do |link| %>
+              <%= simple_form_for link do |f| %>
+              <%= f.input :title, placeholder: "Title", label: false, class:"form-control" %>
+              <%= f.input :url, placeholder: "URL", label: false, class:"form-control" %>
+              <%= f.submit class:"btn btn-dark me-auto mb-2" %>
               <% end  %>
             <% end  %>
           <%# </div> %>

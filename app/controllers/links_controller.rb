@@ -1,7 +1,13 @@
 # app/controllers/links_controller.rb
 class LinksController < ApplicationController
   before_action :authenticate_user!, only: [:update]
-  before_action :link_params, only: [:update]
+
+  def create
+    @link = Link.new(link_params)
+    @link.user = current_user
+    @link.save
+    redirect_to dashboard_path
+  end
 
   def update
     @link = Link.find(params[:id])

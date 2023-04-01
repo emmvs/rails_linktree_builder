@@ -5,6 +5,9 @@ class DashboardController < ApplicationController
 
   def index
     @should_render_navbar = true
+    # @links = user.links
+    @links = current_user.links
+    @empty_links = current_user.missing_links
   end
 
   def appearance
