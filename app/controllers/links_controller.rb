@@ -12,6 +12,7 @@ class LinksController < ApplicationController
   def update
     @link = Link.find(params[:id])
     @link.update(link_params)
+    redirect_to dashboard_path
   end
 
   private
