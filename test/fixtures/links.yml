@@ -1,21 +1,26 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 first:
-  title: "First link"
-  url: "www.hivetracks.com"
+  title: First link
+  url: www.hive.com
+  user_id: 1
 
 second:
-  title: "Second Link"
-  url: "www.hivetracks.com"
+  title: Second Link
+  url: www.hivet.com
+  user_id: 1
 
 third:
-  title: "Third Link"
-  url: "www.hivetracks.com"
+  title: Third Link
+  url: www.hivetr.com
+  user_id: 1
 
 forth:
-  title: "Forth Link"
-  url: "www.hivetracks.com"
+  title: Forth Link
+  url: www.hivetrac.com
+  user_id: 1
 
 fifth:
-  title: "Fifth Link"
-  url: "www.hivetracks.com"
+  title: Fifth Link
+  url: www.hivetracks.com
+  user_id: 1

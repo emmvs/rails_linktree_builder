@@ -1,8 +1,11 @@
 require "application_system_test_case"
+include Warden::Test::Helpers
 
 class LinksTest < ApplicationSystemTestCase
   setup do
     @link = links(:first) # Reference to the first fixture link
+    @user = users(:one)
+    login_as @user
   end
 
   test "Creating a new link" do
@@ -25,5 +28,34 @@ class LinksTest < ApplicationSystemTestCase
     # and to see our "Capybara link" added to the list
     assert_selector "h1", text: "links"
     assert_text "Capybara link"
+  end
+
+  test "Showing a link" do
+      visit dashboard_path
+      click_link @link.title
+
+      assert_selector "h1", text: @link.title
+    end
+
+  test "Updating a link" do
+    visit dashboard_path
+    assert_selector "h1", text: "links"
+
+    click_on "Edit", match: :first
+    assert_selector "h1", text: "Edit link"
+
+    fill_in "Name", with: "Updated link"
+    click_on "Update link"
+
+    assert_selector "h1", text: "links"
+    assert_text "Updated link"
+  end
+
+  test "Destroying a link" do
+    visit dashboard_path
+    assert_text @link.title
+
+    click_on "Delete", match: :first
+    assert_no_text @link.title
   end
 end
