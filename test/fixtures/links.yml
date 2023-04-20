@@ -1,9 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  url: MyString
+first:
+  title: "First link"
+  url: "www.hivetracks.com"
 
-two:
-  title: MyString
-  url: MyString
+second:
+  title: "Second Link"
+  url: "www.hivetracks.com"
+
+third:
+  title: "Third Link"
+  url: "www.hivetracks.com"
+
+forth:
+  title: "Forth Link"
+  url: "www.hivetracks.com"
+
+fifth:
+  title: "Fifth Link"
+  url: "www.hivetracks.com"
