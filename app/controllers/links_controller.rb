@@ -6,13 +6,13 @@ class LinksController < ApplicationController
     @link = Link.new(link_params)
     @link.user = current_user
     @link.save
-    redirect_to dashboard_path
+    redirect_to dashboard_path, notice: "Link was successfully created. 🎉"
   end
 
   def update
     @link = Link.find(params[:id])
     @link.update(link_params)
-    redirect_to dashboard_path
+    redirect_to dashboard_path, notice: "Link was successfully updated. 🎉"
   end
 
   private

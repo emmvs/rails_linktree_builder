@@ -18,7 +18,7 @@
 
             <% @empty_links.each do |link| %>
               <%= simple_form_for link do |f| %>
-              <%= f.input :title, placeholder: "Title", label: false, class:"form-control" %>
+              <%= f.input :title, placeholder: "Title", label: false, class:"form-control", input_html: { autofocus: true } %>
               <%= f.input :url, placeholder: "URL", label: false, class:"form-control" %>
               <%= f.submit class:"btn btn-dark me-auto mb-2" %>
               <% end  %>
@@ -31,7 +31,5 @@
           <%# </div> %>
         </div>
       </div>
-      <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"btn btn-dark me-auto" %>
-      <%# <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: "delete"}, class:"dropdown-item" %>
     </div>
   </div>

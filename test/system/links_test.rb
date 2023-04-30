@@ -11,12 +11,12 @@ class LinksTest < ApplicationSystemTestCase
   test "Creating a new link" do
     # When we visit the links#index page
     # we expect to see a title with the text "links"
-    visit dashboard_path
+    visit root_path
     assert_selector "h1", text: "links"
 
     # When we click on the link with the text "New link"
     # we expect to land on a page with the title "New link"
-    click_on "New link"
+    click_on "Update Link"
     assert_selector "h1", text: "New link"
 
     # When we fill in the name input with "Capybara link"
@@ -31,14 +31,14 @@ class LinksTest < ApplicationSystemTestCase
   end
 
   test "Showing a link" do
-      visit dashboard_path
+      visit root_path
       click_link @link.title
 
       assert_selector "h1", text: @link.title
     end
 
   test "Updating a link" do
-    visit dashboard_path
+    visit root_path
     assert_selector "h1", text: "links"
 
     click_on "Edit", match: :first
@@ -52,7 +52,7 @@ class LinksTest < ApplicationSystemTestCase
   end
 
   test "Destroying a link" do
-    visit dashboard_path
+    visit root_path
     assert_text @link.title
 
     click_on "Delete", match: :first

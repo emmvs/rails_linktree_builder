@@ -1,18 +1,18 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 first:
-  title: First link
-  url: www.hive.com
+  title: Download our NEW App! (First Link)
+  url: https://hivetracks-mountain.vercel.app/Home
   user_id: 1
 
 second:
-  title: Second Link
-  url: www.hivet.com
+  title: Sign Up for our Newsletters! (Second Link)
+  url: https://cdn.forms-content.sg-form.com/7e9d5c6a-079e-11ed-842b-8a63d42c0f65?utm_source=instagram&utm_medium=linktree&utm_campaign=instagram_campaign&utm_id=NLSU&utm_term=Website+instagram_campaign+NLSU&utm_content=Website+instagram_campaign+beekeeping+tech
   user_id: 1
 
 third:
-  title: Third Link
-  url: www.hivetr.com
+  title: Visit our Website! (Third Link)
+  url: https://www.hivetracks.com
   user_id: 1
 
 forth:
