@@ -8,9 +8,6 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :links, dependent: :destroy
 
-  after_create :create_default_links
-  after_update :create_default_links
-
   friendly_id :username, use: %i[slugged]
 
   validates :full_name, length: { maximum: 40 }
@@ -28,9 +25,12 @@ class User < ApplicationRecord
     username_changed? || slug.blank?
   end
 
-  private
-
-  def create_default_links
-    Link.create(user: self, title: '', url: '') while links.count < 10
+  def missing_links
+    final_links = []
+    links_difference = Link::LINK_LIMIT - links.length
+    links_difference.times do
+      final_links << Link.new
+    end
+    final_links
   end
 end

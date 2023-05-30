@@ -14,18 +14,21 @@
         </div>
       </div>
     <div class="col-1"></div>
-
       <div class="row">
         <div class="col-1"></div>
           <div class="col-10">
           <% @links.each do |link|  %>
-            <div class="row">
-              <div class="col-12 d-flex justify-content-center">
-                <%= link_to link.url, target:"_blank", class:"linkable btn btn-secondary" do %>
-                  <span class="linkable-span"><%= link.title  %></span>
-                <% end %>
+            <% unless link.url.empty? %>
+              <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                  <%= link_to link.url, target:"_blank", class:"linkable btn btn-secondary" do %>
+                    <span class="linkable-span"><%= link.title  %></span>
+                  <% end %>
+                </div>
               </div>
-            </div>
+            <% else %>
+            <%= nil %>
+            <% end %>
           <% end %>
           </div>
         <div class="col-1"></div>

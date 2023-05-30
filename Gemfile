@@ -81,6 +81,8 @@ end
 # Costum section
 gem "devise", "~> 4.8"
 gem "simple_form", "~> 5.1"
+
+# CLoudinary and photo security
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
 

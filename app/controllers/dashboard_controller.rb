@@ -5,6 +5,8 @@ class DashboardController < ApplicationController
 
   def index
     @should_render_navbar = true
+    @links = current_user.links
+    @empty_links = current_user.missing_links
   end
 
   def appearance
@@ -14,19 +16,12 @@ class DashboardController < ApplicationController
   def show
     redirect_to dashboard_path if @user.nil?
 
-    @links = @user.links.where.not(url: '', title: '')
+    @links = @user.links
   end
 
   private
 
   def set_user
-    # Using #find_by_id instead of #find (= nil) in case of text input
-    # localhost:3000/1
-    # @user = User.find_by_id(params[:id])
-    begin
-      @user = User.friendly.find(params[:id])
-    rescue StandardError
-      @user = nil
-    end
+    @user = User.friendly.find(params[:id])
   end
 end
