@@ -87,3 +87,4 @@ gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
 
 gem "friendly_id", "~> 5.5"
+gem "sass-rails"

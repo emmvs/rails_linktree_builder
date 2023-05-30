@@ -33,7 +33,7 @@
   }
 
   h1 {
-    font-size: 1rem !important;
+    font-size: 2rem !important;
   }
 
   h2 {
@@ -49,6 +49,15 @@
  .no-padding-col {
   padding-left: 0 !important;
   padding-right: 0 !important;
+ }
+
+ .upload-photo {
+   border: 1px solid #d3d3d3;
+   padding: 16px 24px;
+   cursor: pointer;
+   font-weight: 500;
+   background: white;
+   border-radius: 2px;
  }
 
  /* Link tree Buttons */

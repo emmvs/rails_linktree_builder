@@ -1,4 +1,3 @@
-<%# app/views/dashboard/appearance.html.erb %>
 <div class="container">
   <h1 style="text-align:left;">Edit your page's appearance!</h1>
   <%# This takes us to the registrations_controller which does the update_resource %>
@@ -12,12 +11,13 @@
           <div class="col-6">
             <%= cl_image_tag current_user.avatar.key, class: "avatar-image" if current_user.avatar.attached?  %>
           </div>
-          <div class="col-6 mt-5">
-            <%= f.input :avatar, as: :file, required: false, label: false %>
+          <div class="col-6 mt-5 upload-photo">
+            <%= f.input :avatar, required: false, input_html: { class: 'd-none'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
           </div>
         </div>
 
-        <div class="row mt-5 ">
+        <div class="row mt-5">
+
           <div class="col-6 no-padding-col">
           <%= f.input :full_name, placeholder: "Your full name...", label: false, class:"form-control", required: false %>
           </div>
@@ -27,9 +27,10 @@
               <%= f.input :username, placeholder: "Your username..", label: false, class:"form-control", required: true %>
             </div>
           </div>
+
         </div>
 
-        <div class="row mt-5 d-flex justify-content-between">
+        <div class="row mt-5">
           <div class="col no-padding-col">
           <%= f.input :body, placeholder: "About you..", label: false, class:"form-control", required: false %>
           </div>
