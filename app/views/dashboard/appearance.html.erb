@@ -23,11 +23,14 @@
           </div>
           <div class="col-6 no-padding-col">
             <div class="input-group mb-3 flex-nowrap">
-              <span class="input-group-text">@</span>
-              <%= f.input :username, placeholder: "Your username..", label: false, class:"form-control", required: true %>
+            <span class="input-group-text">@</span>
+            <%= f.input :username,
+                        placeholder: "Your username..",
+                        label: false,
+                        wrapper_html: { class: "flex-grow-1" },
+                        required: true %>
             </div>
           </div>
-
         </div>
 
         <div class="row mt-5">
