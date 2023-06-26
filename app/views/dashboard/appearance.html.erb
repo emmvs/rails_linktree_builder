@@ -1,5 +1,6 @@
 <div class="container">
   <h1 style="text-align:left;">Edit your page's appearance!</h1>
+
   <%# This takes us to the registrations_controller which does the update_resource %>
   <%= simple_form_for(current_user,
     url: registration_path(current_user),
@@ -17,7 +18,6 @@
         </div>
 
         <div class="row mt-5">
-
           <div class="col-6 no-padding-col">
           <%= f.input :full_name, placeholder: "Your full name...", label: false, class:"form-control", required: false %>
           </div>
