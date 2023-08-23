@@ -1,10 +1,5 @@
 // Specific SCSS for Dashboards#Show
 
-.no-padding-col {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
 /* Link tree Buttons */
 .linkable {
   align-items: center;
@@ -41,6 +36,11 @@
     color: $white !important;
     transition: 0.3s;
   }
+}
+
+.no-padding-col {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* TODO: Need to be fixed if they show up */

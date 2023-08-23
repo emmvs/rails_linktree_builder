@@ -13,7 +13,7 @@
             <%= cl_image_tag current_user.avatar.key, class: "avatar-image" if current_user.avatar.attached?  %>
           </div>
           <div class="col-6 mt-5 upload-photo">
-            <%= f.input :avatar, required: false, input_html: { class: 'd-none'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+            <%= f.input :avatar, required: false, input_html: { class: 'd-none'}, label_html: { class: 'upload-photo p'}, label: '📷 Upload a photo' %>
           </div>
         </div>
 
@@ -40,8 +40,10 @@
         </div>
 
         <div class="col-4 no-padding-col mt-5">
-          <%= f.submit "Update Account", class:"btn btn-dark"  %>
+          <%= f.submit "Update Account", class: "btn btn-dark" %>
         </div>
+        <%# TODO: Implement link to see Linktree %>
+        <%# <%= link_to 'See linktree', root_path, class: "btn btn-dark" %>
       </div>
       <div class="col-6 link-preview">
       </div>
