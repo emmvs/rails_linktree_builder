@@ -1,87 +1,22 @@
 // * Link tree Admin & general Styling
 
-// Graphical variables
-@import "config/fonts";
-// @import "config/colors";
-// @import "config/bootstrap_variables";
-
 // External libraries
-// @import "bootstrap";
-// @import "font-awesome";
+@import "bootstrap";
+@import "font-awesome";
 
-// Your CSS partials
+// Graphical variables
+@import "config/colors";
+@import "config/fonts";
+@import "config/bootstrap_variables";
+
+// CSS partials
 @import "components/index";
+@import "pages/index";
 
-
-
-  /* Find background linear gradient in application.html.erb */
-    /* .profile-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,026)) 37%;
-  } */
-
-  /* TODO: Need to be fixed if they show up */
-  /* .notice { */
-  /* .alert { */
-
-  h1, h2 {
-    color: rgb(255, 255, 255) !important;
-    font-family: $body-font;
-    font-weight: 600;
-  }
-
-  h1 {
-    font-size: 1rem !important;
-  }
-
-  h2 {
-    font-size: 0.8rem !important;
-  }
-
- .avatar-image {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
- }
-
- .no-padding-col {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
- }
-
- /* Link tree Buttons */
- .linkable {
-  align-items: center;
-  cursor: pointer;
-  width: 100%;
-  height: 4rem;
-  margin: 0.5rem 0;
-  border-radius: 1.1875rem !important;
-  // background: linear-gradient(0deg, var(--ht-white, #FFF) 0%, var(--ht-white, #FFF) 100%), var(--ht-light-green, #5F8264);
-  background: linear-gradient(0deg, var(--ht-yellow, #F8B42A) 0%, var(--ht-yellow, #F8B42A) 100%), linear-gradient(0deg, var(--ht-white, #FFF) 0%, var(--ht-white, #FFF) 100%), var(--ht-light-green, #5F8264);
-  background-color: #f8b42a !important;
-  border: 1px solid #f8b42a !important;
- }
-
- .linkable:hover {
-  background-color: #2d4a45 !important;
-  color: #f8b42a !important;
- }
-
- .linkable-span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  font-size: 1rem;
-  color: #2d4a45;
-  border-radius: 1.1875rem;
-  // background: linear-gradient(0deg, var(--ht-white, #FFF) 0%, var(--ht-white, #FFF) 100%), var(--ht-light-green, #5F8264);
- }
-
- .linkable-span:hover {
-  color: #f8b42a !important;
- }
+/* Find background linear gradient in application.html.erb */
+/* .profile-page {
+width: 100vw;
+height: 100vh;
+background-color: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,026)) 37%;
+} */
