@@ -1,20 +1,18 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+// * Link tree Admin & general Styling
 
-  /* Link tree Admin & general Styling */
+// Graphical variables
+@import "config/fonts";
+// @import "config/colors";
+// @import "config/bootstrap_variables";
+
+// External libraries
+// @import "bootstrap";
+// @import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+
+
 
   /* Find background linear gradient in application.html.erb */
     /* .profile-page {
@@ -30,6 +28,8 @@
 
   h1, h2 {
     color: rgb(255, 255, 255) !important;
+    font-family: $body-font;
+    font-weight: 600;
   }
 
   h1 {
@@ -58,7 +58,9 @@
   width: 100%;
   height: 4rem;
   margin: 0.5rem 0;
-  border-radius: 50px !important;
+  border-radius: 1.1875rem !important;
+  // background: linear-gradient(0deg, var(--ht-white, #FFF) 0%, var(--ht-white, #FFF) 100%), var(--ht-light-green, #5F8264);
+  background: linear-gradient(0deg, var(--ht-yellow, #F8B42A) 0%, var(--ht-yellow, #F8B42A) 100%), linear-gradient(0deg, var(--ht-white, #FFF) 0%, var(--ht-white, #FFF) 100%), var(--ht-light-green, #5F8264);
   background-color: #f8b42a !important;
   border: 1px solid #f8b42a !important;
  }
@@ -76,6 +78,8 @@
   height: 100%;
   font-size: 1rem;
   color: #2d4a45;
+  border-radius: 1.1875rem;
+  // background: linear-gradient(0deg, var(--ht-white, #FFF) 0%, var(--ht-white, #FFF) 100%), var(--ht-light-green, #5F8264);
  }
 
  .linkable-span:hover {
