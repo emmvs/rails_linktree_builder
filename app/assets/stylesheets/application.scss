@@ -1,92 +1,22 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+// * Link tree Admin & general Styling
 
-  /* Link tree Admin & general Styling */
+// External libraries
+@import "bootstrap";
+@import "font-awesome";
 
-  /* Find background linear gradient in application.html.erb */
-    /* .profile-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,026)) 37%;
-  } */
+// Graphical variables
+@import "config/colors";
+@import "config/fonts";
+@import "config/bootstrap_variables";
 
-  /* TODO: Need to be fixed if they show up */
-  /* .notice { */
-  /* .alert { */
+// CSS partials
+@import "components/index";
+@import "pages/index";
 
-  h1, h2 {
-    color: rgb(255, 255, 255) !important;
-  }
-
-  h1 {
-    font-size: 2rem !important;
-  }
-
-  h2 {
-    font-size: 0.8rem !important;
-  }
-
- .avatar-image {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
- }
-
- .no-padding-col {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
- }
-
- .upload-photo {
-   border: 1px solid #d3d3d3;
-   padding: 16px 24px;
-   cursor: pointer;
-   font-weight: 500;
-   background: white;
-   border-radius: 2px;
- }
-
- /* Link tree Buttons */
- .linkable {
-  align-items: center;
-  cursor: pointer;
-  width: 100%;
-  height: 4rem;
-  margin: 0.5rem 0;
-  border-radius: 50px !important;
-  background-color: #f8b42a !important;
-  border: 1px solid #f8b42a !important;
- }
-
- .linkable:hover {
-  background-color: #2d4a45 !important;
-  color: #f8b42a !important;
- }
-
- .linkable-span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  font-size: 1rem;
-  color: #2d4a45;
- }
-
- .linkable-span:hover {
-  color: #f8b42a !important;
- }
+/* Find background linear gradient in application.html.erb */
+/* .profile-page {
+width: 100vw;
+height: 100vh;
+background-color: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,026)) 37%;
+} */
