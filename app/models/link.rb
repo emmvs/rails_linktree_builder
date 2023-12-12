@@ -2,8 +2,8 @@
 class Link < ApplicationRecord
   LINK_LIMIT = 5
 
+  belongs_to :user
+
   validates :title, presence: true
   validates :url, presence: true
-
-  belongs_to :user
 end

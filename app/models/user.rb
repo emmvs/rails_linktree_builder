@@ -1,19 +1,24 @@
-# app/models/user.rb
 class User < ApplicationRecord
   extend FriendlyId
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
+
+  # Associations
+  has_one :linktree_customization
   has_one_attached :avatar
   has_many :links, dependent: :destroy
-
   friendly_id :username, use: %i[slugged]
 
+  # Validations
   validates :full_name, length: { maximum: 40 }
   validates :body, length: { maximum: 150 }
   validate :valid_username
 
+  # Callbacks
+  # Scopes
+  # Class and instance methods
   def valid_username
     # errors.add(:username, 'is already taken 🤷‍♀️') if User.exists?(username:)
     errors.add(:username, 'is already taken 🤷‍♀️') if User.where.not(id: self.id).exists?(username: username)
