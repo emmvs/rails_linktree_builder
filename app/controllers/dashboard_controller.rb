@@ -1,4 +1,3 @@
-# app/controllers/dashboard_controller.rb
 class DashboardController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :set_user, only: [:show]
@@ -11,6 +10,7 @@ class DashboardController < ApplicationController
 
   def appearance
     @should_render_navbar = true
+    current_user.build_linktree_customization unless current_user.linktree_customization
   end
 
   def show
@@ -23,5 +23,9 @@ class DashboardController < ApplicationController
 
   def set_user
     @user = User.friendly.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:full_name, :username, :body, :avatar)
   end
 end

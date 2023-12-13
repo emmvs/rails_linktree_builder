@@ -6,8 +6,9 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :validatable
 
   # Associations
-  has_one :linktree_customization
   has_one_attached :avatar
+  has_one :linktree_customization
+  accepts_nested_attributes_for :linktree_customization
   has_many :links, dependent: :destroy
   friendly_id :username, use: %i[slugged]
 
