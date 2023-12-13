@@ -1,16 +1,15 @@
-<%# app/views/layouts/_navbar.html.erb %>
-
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
 
-      <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="#">
       <%= image_tag 'hivetracks_logo.png', width: "34", height: "40", class: "d-inline-block align-text-top" %>
-        <%= link_to "HiveTracks LinkTree", dashboard_path, class: "navbar-brand p"  %>
-      </a>
+      <%= link_to "HiveTracks LinkTree", dashboard_path, class: "navbar-brand p"  %>
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -26,8 +25,9 @@
           <%= link_to "Settings", edit_user_registration_path, class: "nav-link p"  %>
         </li>
       </ul>
-          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-        <%# DROPDOWN %>
+
+      <%# DROPDOWN %>
+      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= current_user.username  %>
