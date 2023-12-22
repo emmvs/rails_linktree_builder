@@ -4,11 +4,11 @@
 LinkTree HiveTracks is a web application designed to manage and display personalized link trees. It allows users to create a custom page with links to their most important content, making it easier for their audience to find everything in one place.
 
 ## Features
-- User authentication and management.
-- Create and manage custom links.
-- Track click statistics for each link.
-- Responsive design for optimal viewing on various devices.
-- Admin dashboard for advanced management.
+- User authentication & management
+- Create and manage custom links
+- Track click statistics for each link
+- Responsive design for optimal viewing on various devices
+- Admin dashboard for advanced management
 
 ## Installation
 To get started with this project, clone the repository and install the dependencies:
