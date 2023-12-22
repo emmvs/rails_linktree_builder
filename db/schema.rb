@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_12_191915) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_22_162613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_12_191915) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.integer "click_count", default: 0
+    t.datetime "last_clicked_at"
+    t.string "user_agent"
+    t.string "device_type"
+    t.string "country"
+    t.string "city"
+    t.index ["city"], name: "index_links_on_city"
+    t.index ["country"], name: "index_links_on_country"
+    t.index ["user_agent"], name: "index_links_on_user_agent"
     t.index ["user_id"], name: "index_links_on_user_id"
   end
 
