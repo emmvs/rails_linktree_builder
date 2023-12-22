@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'appearance', to: 'dashboard#appearance'
   root 'dashboard#index'
 
+  get 'links/:id/track_click', to: 'links#track_click', as: :track_link_click
+
   # Gets the id as a parameter to our dashboard_controller within the index action
   # Allows us to use user_path(user) to get the URL for a user's profile page
   get ':id', to: 'dashboard#show', as: :user
