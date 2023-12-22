@@ -1,7 +1,7 @@
 RailsAdmin.config do |config|
   config.asset_source = :sprockets
 
-  config.included_models = [ "User", "Link" ]
+  config.included_models = [ "User", "Link", "Click" ]
 
   ### Popular gems integration
 
