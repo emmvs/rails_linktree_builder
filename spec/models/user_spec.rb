@@ -8,9 +8,10 @@ end
 
 describe User do
   it "should have a name" do
-    expect(User.new(name: "Drew")).to be_valid
+    expect(User.create(username: "Drew")).to be_valid
   end
+
   it "should have an email" do
-    expect(User.new(email: "drew@test.com")).to be_valid
+    expect(User.create(email: "drew@test.com")).to be_valid
   end
 end
