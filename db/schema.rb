@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_22_162613) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_22_200627) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_22_162613) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "clicks", force: :cascade do |t|
+    t.bigint "link_id", null: false
+    t.string "user_agent"
+    t.string "device_type"
+    t.string "country"
+    t.string "city"
+    t.datetime "clicked_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country"], name: "index_clicks_on_country"
+    t.index ["link_id"], name: "index_clicks_on_link_id"
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.text "slug", null: false
     t.integer "sluggable_id", null: false
@@ -54,20 +67,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_22_162613) do
   end
 
   create_table "links", force: :cascade do |t|
-    t.text "title"
-    t.text "url"
+    t.text "title", null: false
+    t.text "url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.integer "click_count", default: 0
     t.datetime "last_clicked_at"
-    t.string "user_agent"
-    t.string "device_type"
-    t.string "country"
-    t.string "city"
-    t.index ["city"], name: "index_links_on_city"
-    t.index ["country"], name: "index_links_on_country"
-    t.index ["user_agent"], name: "index_links_on_user_agent"
     t.index ["user_id"], name: "index_links_on_user_id"
   end
 
@@ -104,6 +110,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_22_162613) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "clicks", "links"
   add_foreign_key "links", "users"
   add_foreign_key "linktree_customizations", "users"
 end
