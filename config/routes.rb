@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   # Allows us to use user_path(user) to get the URL for a user's profile page
   get ':id', to: 'dashboard#show', as: :user
 
+  # get 'dashboard/:id', to: 'dashboard#show', as: :dashboard
+
   resources :links, only: %i[create update]
 end
