@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+  get 'pages/about'
+  get 'pages/contact'
   get 'static/error'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -18,8 +21,6 @@ Rails.application.routes.draw do
   # Gets the id as a parameter to our dashboard_controller within the index action
   # Allows us to use user_path(user) to get the URL for a user's profile page
   get ':id', to: 'dashboard#show', as: :user
-
-  # get 'dashboard/:id', to: 'dashboard#show', as: :dashboard
 
   resources :links, only: %i[create update]
 end
