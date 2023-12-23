@@ -1,10 +1,10 @@
 <div class="container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h1>Edit <%= resource_name.to_s.humanize %></h1>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
+    <div class="form-inputs text-white">
       <%= f.input :email, required: true, autofocus: true %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -12,7 +12,7 @@
       <% end %>
 
     <div class="input-group mb-3">
-      <span class="input-group-text">@</span>
+      <span style="height: 62px;" class="input-group-text">@</span>
       <%= f.input :username,
                   placeholder: "Your username..",
                   label: false,
@@ -38,9 +38,7 @@
     </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "text-white" %></p>
 
-  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-  <%= link_to "Back", dashboard_path, data: {turbo: false} %>
+  <%= link_to "Back", dashboard_path, data: {turbo: false}, class: "btn btn-custom" %>
 </div>
