@@ -2,8 +2,12 @@
   <div class="container-fluid">
 
     <a class="navbar-brand" href="#">
-      <%= image_tag 'hivetracks_logo.png', width: "34", height: "40", class: "d-inline-block align-text-top" %>
-      <%= link_to "HiveTracks LinkTree", dashboard_path, class: "navbar-brand p"  %>
+      <% if current_user.avatar.attached?  %>
+        <%= cl_image_tag current_user.avatar.key, width: "30", crop: "fill", class: "d-inline-block align-text-top rounded-circle" %>
+      <% else %>
+        <%= image_tag 'hivetracks_logo.png', width: "30", height: "30", class: "d-inline-block align-text-top" %>
+      <% end %>
+      <%= link_to "LinkTree Builder", dashboard_path, class: "navbar-brand p"  %>
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

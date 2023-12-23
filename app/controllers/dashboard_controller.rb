@@ -10,6 +10,8 @@ class DashboardController < ApplicationController
 
   def appearance
     @should_render_navbar = true
+    @links = current_user.links
+    @user = current_user
     current_user.build_linktree_customization unless current_user.linktree_customization
   end
 

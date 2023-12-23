@@ -1,0 +1,31 @@
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.linktree-form,
+.linktree-preview {
+  width: 48%;
+}
+
+.phone-preview {
+  background: radial-gradient(50% 50.00% at 50.00% 50.00%, #5F8264 0%, rgba(15, 46, 51, 0.74) 100%), var(--ht-light-green, #5F8264);
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  // width: 375px;
+  // height: 667px;
+  width: 390px;
+  height: 844px;
+  overflow: auto;
+  margin: auto;
+}
+
+/* Adjust internal content size if necessary */
+.phone-preview .container {
+  transform: scale(0.8);
+  /* Scale down the content to fit better */
+  transform-origin: top center;
+  /* Ensure scaling doesn't affect positioning */
+}

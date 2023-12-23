@@ -1,22 +1,21 @@
-<div class="container text-white">
-  <h2>Log in</h2>
-  <%# Fix for Turbo so dropdown works data: {turbo: false} %>
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false} ) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
+<div class="container p-3 text-white">
+  <h1 class="text-white">Log in</h1>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false} ) do |f| %>
+      <div class="ht-font">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Log In", class:"btn" %>
-    </div>
-  <% end %>
+      <div class="form-actions">
+        <%= f.button :submit, "Log In", class: "btn-yellow" %>
+      </div>
+    <% end %>
+</div>
 
   <%= render "devise/shared/links" %>
-</div>
