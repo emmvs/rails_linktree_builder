@@ -5,11 +5,14 @@ class DashboardController < ApplicationController
   def index
     @should_render_navbar = true
     @links = current_user.links
+    @user = current_user
     @empty_links = current_user.missing_links
   end
 
   def appearance
     @should_render_navbar = true
+    @links = current_user.links
+    @user = current_user
     current_user.build_linktree_customization unless current_user.linktree_customization
   end
 

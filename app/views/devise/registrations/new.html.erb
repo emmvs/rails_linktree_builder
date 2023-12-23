@@ -1,14 +1,17 @@
-<div class="container">
-  <h2>Sign up</h2>
+<div class="container p-3 text-white">
+  <h1 class="text-white">Sign up</h1>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false} ) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
+    <div class="ht-font">
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email" }%>
+                  input_html: {
+                    class: "form-control",
+                    autocomplete: "email"
+                    }%>
     <div class="input-group mb-3">
       <span style="height: 62px;" class="input-group-text">@</span>
       <%= f.input :username,
@@ -27,7 +30,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign Up" %>
+      <%= f.button :submit, "Sign Up", class: "btn-custom" %>
     </div>
   <% end %>
 

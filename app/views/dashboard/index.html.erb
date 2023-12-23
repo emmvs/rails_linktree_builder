@@ -12,7 +12,7 @@
               <%= simple_form_for link do |f| %>
               <%= f.input :title, placeholder: "Title", label: false, class:"form-control" %>
               <%= f.input :url, placeholder: "URL", label: false, class:"form-control" %>
-              <%= f.submit class:"btn btn-dark me-auto mb-2" %>
+              <%= f.submit class:"btn btn-custom me-auto mb-2" %>
               <% end  %>
             <% end  %>
 
@@ -20,16 +20,51 @@
               <%= simple_form_for link do |f| %>
               <%= f.input :title, placeholder: "Title", label: false, class:"form-control", input_html: { autofocus: true } %>
               <%= f.input :url, placeholder: "URL", label: false, class:"form-control" %>
-              <%= f.submit class:"btn btn-dark me-auto mb-2" %>
+              <%= f.submit class:"btn btn-custom me-auto mb-2" %>
               <% end  %>
             <% end  %>
           <%# </div> %>
         </div>
 
-          <div class="col-6">
-        <%# <div class="col-3"> %>
-          <%# </div> %>
-        </div>
+
+         <!-- Right Side: Linktree Preview -->
+          <div class="col-md-6 linktree-preview">
+            <%= link_to 'View my Linktree', user_path(@user), class: 'mx-2 view-linktree btn btn-custom' %>
+            <div class="phone-preview mt-5">
+              <div class="container">
+                <div class="row mt-5">
+                  <div class="col-12 d-flex justify-content-center">
+                    <%= image_tag(@user.avatar, class:"avatar") if @user.avatar.attached?  %>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <div class="d-flex justify-content-center">
+                      <h3><%= @user.full_name %></h3>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <div class="d-flex justify-content-center">
+                      <p><%= @user.body %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <% @links.each do |link| %>
+                      <% unless link.url.empty? %>
+                        <div class="row">
+                          <div class="col-12 d-flex justify-content-center">
+                            <%= link_to link.url, target:"_blank", class:"linkable btn btn-secondary" do %>
+                              <span class="linkable-span linkable-font"><%= link.title %></span>
+                            <% end %>
+                          </div>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>

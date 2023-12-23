@@ -1,22 +1,28 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
 
+    <%# Brand Logo %>
     <a class="navbar-brand" href="#">
-      <%= image_tag 'hivetracks_logo.png', width: "34", height: "40", class: "d-inline-block align-text-top" %>
-      <%= link_to "HiveTracks LinkTree", dashboard_path, class: "navbar-brand p"  %>
+      <% if current_user.avatar.attached?  %>
+        <%= cl_image_tag current_user.avatar.key, width: "30", crop: "fill", class: "d-inline-block align-text-top rounded-circle" %>
+      <% else %>
+        <%= image_tag 'hivetracks_logo.png', width: "30", height: "30", class: "d-inline-block align-text-top" %>
+      <% end %>
+      <%= link_to "LinkTree Builder", dashboard_path, class: "navbar-brand p"  %>
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <%# Navbar %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to "Links", dashboard_path, class: "nav-link p"  %>
+          <%= link_to "Appearance", appearance_path, class: "nav-link p"  %>
         </li>
         <li class="nav-item">
-          <%= link_to "Appearance", appearance_path, class: "nav-link p"  %>
+          <%= link_to "Links", dashboard_path, class: "nav-link p"  %>
         </li>
         <li class="nav-item">
           <%= link_to "Analytics", rails_admin_path, class: "nav-link p"  %>
@@ -26,17 +32,17 @@
         </li>
       </ul>
 
-      <%# DROPDOWN %>
+      <%# Dropdown %>
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= current_user.username  %>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "My Account", edit_user_registration_path, class: "dropdown-item" %>
-            <%# <li><a class="dropdown-item" href="#">Another action</a></li> %>
-            <li><hr class="dropdown-divider"></li>
-            <%# Rails 7 %>
+            <li><%= link_to "My Account", edit_user_registration_path, class: "dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
+                <li><%= link_to "My Linktree", user_path(@user), class: "dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: "delete"}, class:"dropdown-item" %></li>
           </ul>
         </li>

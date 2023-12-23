@@ -1,0 +1,9 @@
+.btn-custom {
+  color: $dark-green !important;
+  font-family: $body-font;
+  width: 13.125rem;
+  height: 2.1875rem;
+  flex-shrink: 0;
+  border-radius: 4.125rem !important;
+  background: linear-gradient(0deg, var(--HT-Yellow, #F8B42A) 0%, var(--HT-Yellow, #F8B42A) 100%), linear-gradient(0deg, var(--HT-White, #FFF) 0%, var(--HT-White, #FFF) 100%), var(--HT-Light-Green, #5F8264);
+}

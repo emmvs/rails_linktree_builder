@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+  get 'pages/about'
+  get 'pages/contact'
   get 'static/error'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

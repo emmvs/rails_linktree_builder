@@ -1,0 +1,24 @@
+.white-box {
+  background: $light-gray;
+  opacity: 80%;
+  color: $dark-green;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Tablet (e.g., 768px and up) */
+@media (min-width: 768px) {
+  .white-box {
+    width: 80%;
+  }
+}
+
+/* Desktop (e.g., 1024px and up) */
+@media (min-width: 1024px) {
+  .white-box {
+    width: 60%;
+  }
+}
