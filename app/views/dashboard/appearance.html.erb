@@ -1,8 +1,7 @@
 <div class="container text-white dashboard-container">
-
   <div class="row">
-    <!-- Left Side: Linktree Form -->
     <h1 style="text-align:left;">Edit your page's appearance!✍🏻</h1>
+    <!-- Left Side: Linktree Form -->
     <div class="col-md-6 linktree-form">
       <%= simple_form_for(current_user,
         url: registration_path(current_user),
@@ -108,7 +107,7 @@
           </div>
         </div>
       </div>
-      <%= link_to 'View my Linktree', user_path(@user), class: 'mt-3 view-linktree btn btn-yellow' %>
+      <%= link_to 'View my Linktree', user_path(@user), class: 'mt-4 view-linktree btn btn-custom' %>
     </div>
 
   </div>
