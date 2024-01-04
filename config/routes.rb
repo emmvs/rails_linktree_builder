@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#index'
   get 'appearance', to: 'dashboard#appearance'
+
   root 'dashboard#index'
 
   get 'links/:id/track_click', to: 'links#track_click', as: :track_link_click
@@ -23,4 +24,6 @@ Rails.application.routes.draw do
   get ':id', to: 'dashboard#show', as: :user
 
   resources :links, only: %i[create update]
+
+  get '/download_vcard/:name', to: 'vcards#download', as: :download_vcard
 end
