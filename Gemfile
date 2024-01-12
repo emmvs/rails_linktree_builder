@@ -20,7 +20,8 @@ gem "bootstrap", "~> 5.2"
 gem "simple_form"
 gem "font-awesome-sass", "~> 6.1"
 gem "autoprefixer-rails"
-gem "sassc-rails" # Use Sass for CSS
+gem "sassc-rails"
+gem 'cssbundling-rails'
 
 # Utilities
 gem "image_processing", "~> 1.2" # Active Storage variants
