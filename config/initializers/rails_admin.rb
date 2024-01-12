@@ -1,7 +1,10 @@
 RailsAdmin.config do |config|
+  config.asset_source = :importmap
   config.asset_source = :sprockets
 
   config.included_models = [ "User", "Link", "Click" ]
+
+  config.parent_controller = '::ApplicationController'
 
   ### Popular gems integration
 
@@ -10,6 +13,15 @@ RailsAdmin.config do |config|
   #   warden.authenticate! scope: :user
   # end
   # config.current_user_method(&:current_user)
+
+  # Authentication and authorization
+  config.authenticate_with do
+    # Use Devise's method to check if the user is logged in
+    authenticate_user!
+
+    # Redirect to main page if the user is not an admin (adjust as per your requirements)
+    redirect_to main_app.root_path unless current_user.admin?
+  end
 
   ## == CancanCan ==
   # config.authorize_with :cancancan
