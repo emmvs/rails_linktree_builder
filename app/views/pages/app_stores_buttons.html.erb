@@ -1,0 +1,22 @@
+<div class="container d-flex flex-column justify-content-center text-center mx-1">
+  <h1 class="mt-5" >Get B-zzing</h1>
+  <h1>with</h1>
+  <h1>HiveTracks App</h1>
+  <h1 class="mt-5" ><%= image_tag "bee.png", width: 100 %></h1>
+  <div class="row my-5 mx-1">
+    <div class="col-sm-6 mb-5">
+      <div>
+        <%= link_to "https://apps.apple.com/app/hivetracks/id1667408004", class: "text-decoration-none d-block" do %>
+          <%= image_tag "app_store.svg", class: "rounded p-2", style: "width: 200px;" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-6 mb-5">
+      <div>
+        <%= link_to "https://play.google.com/store/apps/details?id=com.hivetracks.hivetracksapp", class: "text-decoration-none d-block" do  %>
+          <%= image_tag "google_play_store_logo.png", width: 150, class: "rounded", style: "width: 210px;" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
