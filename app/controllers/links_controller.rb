@@ -6,7 +6,7 @@ class LinksController < ApplicationController
     @link = Link.new(link_params)
     @link.user = current_user
     if @link.save
-      redirect_to dashboard_path, notice: "Link was successfully created. 🎉"
+      redirect_to dashboards_path, notice: "Link was successfully created. 🎉"
     else
       render :new, alert: "Error creating link. 😱"
     end
@@ -14,7 +14,7 @@ class LinksController < ApplicationController
 
   def update
     if @link.update(link_params)
-      redirect_to dashboard_path, notice: "Link was successfully updated. 🎉"
+      redirect_to dashboards_path, notice: "Link was successfully updated. 🎉"
     else
       render :edit, alert: "Error updating link. 😱"
     end
