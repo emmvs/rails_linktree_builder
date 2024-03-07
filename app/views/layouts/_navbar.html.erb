@@ -8,7 +8,7 @@
       <% else %>
         <%= image_tag 'hivetracks_logo.png', width: "30", height: "30", class: "d-inline-block align-text-top" %>
       <% end %>
-      <%= link_to "LinkTree Builder", dashboard_path, class: "navbar-brand p"  %>
+      <%= link_to "LinkTree Builder", dashboards_path, class: "navbar-brand p"  %>
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
           <%= link_to "Appearance", appearance_path, class: "nav-link p"  %>
         </li>
         <li class="nav-item">
-          <%= link_to "Links", dashboard_path, class: "nav-link p"  %>
+          <%= link_to "Links", dashboards_path, class: "nav-link p"  %>
         </li>
         <li class="nav-item">
           <%= link_to "Analytics", rails_admin_path, class: "nav-link p"  %>
