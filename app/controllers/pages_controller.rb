@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def app_stores
   end
+
+  def app_stores_buttons
+  end
 end

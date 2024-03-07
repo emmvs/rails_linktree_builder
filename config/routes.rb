@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   # QR Codes that lead to App Stores
   get '/app_stores', to: 'pages#app_stores', as: :app_stores
+  get '/app_stores_buttons', to: 'pages#app_stores_buttons', as: :app_stores_buttons
 
   # Gets the id as a parameter to our dashboards_controller within the index action
   # Allows us to use user_path(user) to get the URL for a user's profile page
