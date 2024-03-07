@@ -1,0 +1,114 @@
+<div class="container text-white dashboard-container">
+  <div class="row">
+    <h1 style="text-align:left;">Edit your page's appearance!✍🏻</h1>
+    <!-- Left Side: Linktree Form -->
+    <div class="col-md-6 linktree-form">
+      <%= simple_form_for(current_user,
+        url: registration_path(current_user),
+        html: {method: :put},
+        data: {turbo: false}) do |f|  %>
+        <div class="row">
+          <div class="col-12 link-list">
+            <div class="row mt-5">
+              <div class="col-12">
+                <%= cl_image_tag current_user.avatar.key, class: "avatar-image" if current_user.avatar.attached?  %>
+              </div>
+              <div class="col-12 mt-5 upload-photo">
+                <%= f.input :avatar, required: false, input_html: { class: 'd-none'}, label_html: { class: 'upload-photo p'}, label: '📷 Upload a photo' %>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12">
+                <%= f.input :full_name, placeholder: "Linktree Title", label: false, class:"form-control", required: false %>
+              </div>
+              <div class="col-12">
+                <div class="input-group mb-3 flex-nowrap">
+                  <span style="height: 61px;" class="input-group-text d-flex align-items-center">@</span>
+                  <%= f.input :username,
+                              placeholder: "Your username..",
+                              label: false,
+                              wrapper_html: { class: "flex-grow-1" },
+                              required: true %>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col">
+                <%= f.input :body, placeholder: "About you..", label: false, class:"form-control", required: false %>
+              </div>
+            </div>
+            <%= f.simple_fields_for :linktree_customization do |ltc| %>
+              <div class="row">
+                <%# LinktreeCustomization %>
+                <%= f.simple_fields_for :linktree_customization do |ltc| %>
+                  <div class="row">
+                    <div class="col-6">
+                      <%= ltc.input :theme, label: 'Theme', placeholder: "dark" %>
+                    </div>
+                    <div class="col-6">
+                      <%= ltc.input :background_color, label: 'Background Color', placeholder: "#89CFF0" %>
+                    </div>
+                    <div class="col-6">
+                      <%= ltc.input :link_shape, label: 'Link Shape', placeholder: "round" %>
+                    </div>
+                    <div class="col-6">
+                      <%= ltc.input :link_color, label: 'Link Color', placeholder: "#89CFF0" %>
+                    </div>
+                    <div class="col-6">
+                      <%= ltc.input :link_font_color, label: 'Link Font Color', placeholder: "#89CFF0" %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+            <div class="col-6 no-padding-col mt-5">
+              <%= f.submit "Update Account", class: "btn btn-dark" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <br>
+      <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: "delete"}, class:"btn btn-danger mb-3" %>
+    </div>
+
+    <!-- Right Side: Linktree Preview -->
+    <div class="col-md-6 linktree-preview">
+      <div class="phone-preview mt-5">
+        <div class="container">
+          <div class="row mt-5">
+            <div class="col-12 d-flex justify-content-center">
+              <%= image_tag(@user.avatar, class:"avatar") if @user.avatar.attached?  %>
+            </div>
+            <div class="col-12 mt-3">
+              <div class="d-flex justify-content-center">
+                <h3><%= @user.full_name %></h3>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="d-flex justify-content-center">
+                <p><%= @user.body %></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <% @links.each do |link| %>
+                <% unless link.url.empty? %>
+                  <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                      <%= link_to link.url, target:"_blank", class:"linkable btn btn-secondary" do %>
+                        <span class="linkable-span linkable-font"><%= link.title %></span>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= link_to 'View my Linktree', user_path(@user), class: 'mt-4 view-linktree btn btn-custom' %>
+    </div>
+
+  </div>
+</div>
