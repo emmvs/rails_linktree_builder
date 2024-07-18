@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/about'
   get 'static/error'
+  get '/biodiversity_dashboard', to: 'dashboards#biodiversity'
 
   constraints ->(request) { request.env['warden'].user } do
     #              ☝🏻 current HTTP request object
@@ -13,18 +14,17 @@ Rails.application.routes.draw do
   root 'pages#about'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  
-  get 'dashboards', to: 'dashboards#index'
-  get 'appearance', to: 'dashboards#appearance'
-  
-  
-  get 'links/:id/track_click', to: 'links#track_click', as: :track_link_click
-  
+
+  get '/dashboards', to: 'dashboards#index'
+  get '/appearance', to: 'dashboards#appearance'
+
+  get '/links/:id/track_click', to: 'links#track_click', as: :track_link_click
+
   get '/error', to: 'static#error', as: :error
 
   # QR Codes that lead to App Stores

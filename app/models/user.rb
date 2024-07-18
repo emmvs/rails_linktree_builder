@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # Devise Modules
   # TODO: Enable :confirmable for email verification
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable
 
   # Associations
   has_one_attached :avatar
@@ -48,7 +48,7 @@ class User < ApplicationRecord
   private
 
   def valid_username
-    errors.add(:username, 'is already taken 🤷‍♀️') if User.where.not(id: self.id).exists?(username: username)
+    errors.add(:username, 'is already taken 🤷‍♀️') if User.where.not(id:).exists?(username:)
     errors.add(:username, 'is restricted 🙅‍♀️') if RESTRICTED_USERNAMES.include?(username)
   end
 end

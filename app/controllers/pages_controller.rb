@@ -1,16 +1,11 @@
 class PagesController < ApplicationController
-  def home
-  end
+  def home; end
 
-  def about
-  end
+  def about; end
 
-  def contact
-  end
+  def contact; end
 
-  def app_stores
-  end
+  def app_stores; end
 
-  def app_stores_buttons
-  end
+  def app_stores_buttons; end
 end

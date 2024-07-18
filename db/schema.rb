@@ -10,107 +10,109 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_09_150315) do
+ActiveRecord::Schema[7.0].define(version: 20_240_309_150_315) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "active_storage_attachments", force: :cascade do |t|
-    t.text "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  create_table 'active_storage_attachments', force: :cascade do |t|
+    t.text 'name', null: false
+    t.string 'record_type', null: false
+    t.bigint 'record_id', null: false
+    t.bigint 'blob_id', null: false
+    t.datetime 'created_at', null: false
+    t.index ['blob_id'], name: 'index_active_storage_attachments_on_blob_id'
+    t.index %w[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness',
+                                                    unique: true
   end
 
-  create_table "active_storage_blobs", force: :cascade do |t|
-    t.text "key", null: false
-    t.text "filename", null: false
-    t.text "content_type"
-    t.text "metadata"
-    t.text "service_name", null: false
-    t.bigint "byte_size", null: false
-    t.text "checksum"
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  create_table 'active_storage_blobs', force: :cascade do |t|
+    t.text 'key', null: false
+    t.text 'filename', null: false
+    t.text 'content_type'
+    t.text 'metadata'
+    t.text 'service_name', null: false
+    t.bigint 'byte_size', null: false
+    t.text 'checksum'
+    t.datetime 'created_at', null: false
+    t.index ['key'], name: 'index_active_storage_blobs_on_key', unique: true
   end
 
-  create_table "active_storage_variant_records", force: :cascade do |t|
-    t.bigint "blob_id", null: false
-    t.text "variation_digest", null: false
-    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  create_table 'active_storage_variant_records', force: :cascade do |t|
+    t.bigint 'blob_id', null: false
+    t.text 'variation_digest', null: false
+    t.index %w[blob_id variation_digest], name: 'index_active_storage_variant_records_uniqueness', unique: true
   end
 
-  create_table "clicks", force: :cascade do |t|
-    t.bigint "link_id", null: false
-    t.string "user_agent"
-    t.string "device_type"
-    t.string "country"
-    t.string "city"
-    t.datetime "clicked_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["country"], name: "index_clicks_on_country"
-    t.index ["link_id"], name: "index_clicks_on_link_id"
+  create_table 'clicks', force: :cascade do |t|
+    t.bigint 'link_id', null: false
+    t.string 'user_agent'
+    t.string 'device_type'
+    t.string 'country'
+    t.string 'city'
+    t.datetime 'clicked_at'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['country'], name: 'index_clicks_on_country'
+    t.index ['link_id'], name: 'index_clicks_on_link_id'
   end
 
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.text "slug", null: false
-    t.integer "sluggable_id", null: false
-    t.text "sluggable_type"
-    t.text "scope"
-    t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  create_table 'friendly_id_slugs', force: :cascade do |t|
+    t.text 'slug', null: false
+    t.integer 'sluggable_id', null: false
+    t.text 'sluggable_type'
+    t.text 'scope'
+    t.datetime 'created_at'
+    t.index %w[slug sluggable_type scope], name: 'index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope',
+                                           unique: true
+    t.index %w[slug sluggable_type], name: 'index_friendly_id_slugs_on_slug_and_sluggable_type'
+    t.index %w[sluggable_type sluggable_id], name: 'index_friendly_id_slugs_on_sluggable_type_and_sluggable_id'
   end
 
-  create_table "links", force: :cascade do |t|
-    t.text "title", null: false
-    t.text "url", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.integer "click_count", default: 0
-    t.datetime "last_clicked_at"
-    t.index ["user_id"], name: "index_links_on_user_id"
+  create_table 'links', force: :cascade do |t|
+    t.text 'title', null: false
+    t.text 'url', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'user_id', null: false
+    t.integer 'click_count', default: 0
+    t.datetime 'last_clicked_at'
+    t.index ['user_id'], name: 'index_links_on_user_id'
   end
 
-  create_table "linktree_customizations", force: :cascade do |t|
-    t.string "theme"
-    t.string "background_color"
-    t.string "link_shape"
-    t.string "link_color"
-    t.string "link_font_color"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_linktree_customizations_on_user_id"
+  create_table 'linktree_customizations', force: :cascade do |t|
+    t.string 'theme'
+    t.string 'background_color'
+    t.string 'link_shape'
+    t.string 'link_color'
+    t.string 'link_font_color'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_linktree_customizations_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "username"
-    t.string "full_name"
-    t.text "body"
-    t.string "slug"
-    t.boolean "admin", default: false, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["slug"], name: "index_users_on_slug", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'username'
+    t.string 'full_name'
+    t.text 'body'
+    t.string 'slug'
+    t.boolean 'admin', default: false, null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+    t.index ['slug'], name: 'index_users_on_slug', unique: true
+    t.index ['username'], name: 'index_users_on_username', unique: true
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "clicks", "links"
-  add_foreign_key "links", "users"
-  add_foreign_key "linktree_customizations", "users"
+  add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'
+  add_foreign_key 'active_storage_variant_records', 'active_storage_blobs', column: 'blob_id'
+  add_foreign_key 'clicks', 'links'
+  add_foreign_key 'links', 'users'
+  add_foreign_key 'linktree_customizations', 'users'
 end

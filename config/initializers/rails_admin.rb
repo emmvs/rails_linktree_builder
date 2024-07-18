@@ -2,7 +2,7 @@ RailsAdmin.config do |config|
   config.asset_source = :importmap
   config.asset_source = :sprockets
 
-  config.included_models = [ "User", "Link", "Click" ]
+  config.included_models = %w[User Link Click]
 
   config.parent_controller = '::ApplicationController'
 

@@ -1,22 +1,22 @@
 class LinksController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update]
-  before_action :set_link, only: [:update, :track_click]
+  before_action :authenticate_user!, only: %i[create update]
+  before_action :set_link, only: %i[update track_click]
 
   def create
     @link = Link.new(link_params)
     @link.user = current_user
     if @link.save
-      redirect_to dashboards_path, notice: "Link was successfully created. 🎉"
+      redirect_to dashboards_path, notice: 'Link was successfully created. 🎉'
     else
-      render :new, alert: "Error creating link. 😱"
+      render :new, alert: 'Error creating link. 😱'
     end
   end
 
   def update
     if @link.update(link_params)
-      redirect_to dashboards_path, notice: "Link was successfully updated. 🎉"
+      redirect_to dashboards_path, notice: 'Link was successfully updated. 🎉'
     else
-      render :edit, alert: "Error updating link. 😱"
+      render :edit, alert: 'Error updating link. 😱'
     end
   end
 
@@ -27,15 +27,15 @@ class LinksController < ApplicationController
 
     begin
       create_click_record(request.remote_ip)
-    rescue => e
+    rescue StandardError => e
       Rails.logger.error "Error in track_click: #{e.message}"
-      redirect_to error_path, alert: "Ooops! An error occurred. 😱" and return
+      redirect_to error_path, alert: 'Ooops! An error occurred. 😱' and return
     end
 
     if @link.save
       redirect_to @link.url, allow_other_host: true
     else
-      redirect_to error_path, alert: "Error processing your request."
+      redirect_to error_path, alert: 'Error processing your request.'
     end
   end
 
@@ -61,34 +61,34 @@ class LinksController < ApplicationController
 
   def determine_country(remote_ip)
     results = Geocoder.search(remote_ip)
-    if results.present? && !results.first.data["bogon"]
+    if results.present? && !results.first.data['bogon']
       results.first.country
     else
-      "Local"
+      'Local'
     end
   end
 
   def determine_city(remote_ip)
     results = Geocoder.search(remote_ip)
-    if results.present? && !results.first.data["bogon"]
+    if results.present? && !results.first.data['bogon']
       results.first.city
     else
-      "Local"
+      'Local'
     end
   end
 
   def determine_device_type(user_agent)
     browser = Browser.new(user_agent)
     if browser.device.mobile?
-      "Mobile"
+      'Mobile'
     elsif browser.device.tablet?
-      "Tablet"
+      'Tablet'
     elsif browser.device.tv?
-      "TV"
+      'TV'
     elsif browser.known?
-      "Desktop"
+      'Desktop'
     else
-      "Unknown"
+      'Unknown'
     end
   end
 end

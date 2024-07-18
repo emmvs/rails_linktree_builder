@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: %i[show biodiversity]
   before_action :set_user, only: [:show]
 
   def index
@@ -21,6 +21,8 @@ class DashboardsController < ApplicationController
 
     @links = @user.links
   end
+
+  def biodiversity; end
 
   private
 

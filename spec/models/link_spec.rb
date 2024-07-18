@@ -17,10 +17,10 @@ RSpec.describe Link, type: :model do
   describe 'click tracking' do
     before do
       # Setup necessary attributes if required
-      link.user_agent = "Mozilla/5.0"
-      link.device_type = "desktop"
-      link.country = "USA"
-      link.city = "New York"
+      link.user_agent = 'Mozilla/5.0'
+      link.device_type = 'desktop'
+      link.country = 'USA'
+      link.city = 'New York'
       link.save!
     end
 
@@ -33,13 +33,15 @@ RSpec.describe Link, type: :model do
     end
 
     it 'updates user_agent' do
-      new_user_agent = "Mozilla/5.0 (iPhone)"
+      new_user_agent = 'Mozilla/5.0 (iPhone)'
       expect { link.track_click(user_agent: new_user_agent) }.to change { link.reload.user_agent }.to(new_user_agent)
     end
 
     it 'updates device_type' do
-      new_device_type = "mobile"
-      expect { link.track_click(device_type: new_device_type) }.to change { link.reload.device_type }.to(new_device_type)
+      new_device_type = 'mobile'
+      expect { link.track_click(device_type: new_device_type) }.to change {
+                                                                     link.reload.device_type
+                                                                   }.to(new_device_type)
     end
   end
 end
