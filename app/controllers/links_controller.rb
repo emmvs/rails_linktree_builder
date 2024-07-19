@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LinksController < ApplicationController
   before_action :authenticate_user!, only: %i[create update]
   before_action :set_link, only: %i[update track_click]

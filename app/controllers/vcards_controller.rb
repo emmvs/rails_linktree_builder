@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class VcardsController < ApplicationController
   def download
     filename = params[:name]

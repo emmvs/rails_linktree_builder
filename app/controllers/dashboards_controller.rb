@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DashboardsController < ApplicationController
   before_action :authenticate_user!, except: %i[show biodiversity]
   before_action :set_user, only: [:show]

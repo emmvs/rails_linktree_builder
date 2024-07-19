@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if Rails.env.development?
   puts 'Cleaning Database 🧼'
   Click.destroy_all
@@ -31,7 +33,7 @@ hivetracks_avatar = URI.open('https://res.cloudinary.com/dk5glvhr6/image/upload/
 hivetracks.avatar.attach(io: hivetracks_avatar, filename: 'avatar.jpg')
 
 puts 'Creating Links 🔗🔗🔗'
-le_wagon = Link.create!(
+Link.create!(
   title: 'Learn to code!👩🏼‍💻',
   url: 'http://www.lewagon.com',
   user: emma
